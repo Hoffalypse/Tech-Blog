@@ -7,7 +7,7 @@ class Review extends Model {
 
 
 }
-User.init(
+Review.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -23,6 +23,13 @@ User.init(
       type: DataTypes.TEXT,
       allowNull: false,
     },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+  },
   },
   {
  
@@ -32,6 +39,7 @@ User.init(
     underscored: true,
     modelName: 'review',
   }
+  
 );
 
 

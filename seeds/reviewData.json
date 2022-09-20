@@ -1,0 +1,30 @@
+[
+    {
+      "title": "this is the title",
+      "content": "This will give you all of the info about a selected topic 1",
+      "user_id": 2,
+      "starting_date": "April 20, 2021 07:00:00",
+      "ending_date": "June 21, 2021 17:00:00"
+    },
+    {
+        "title": "this is the title 2",
+        "content": "This will give you all of the info about a selected topic 2",
+        "user_id": 1,
+        "starting_date": "April 20, 2021 07:00:00",
+        "ending_date": "June 21, 2021 17:00:00"
+    },
+    {
+        "title": "this is the title 3",
+        "content": "This will give you all of the info about a selected topic 3",
+        "user_id": 3,
+        "starting_date": "April 20, 2021 07:00:00",
+        "ending_date": "June 21, 2021 17:00:00"
+      },
+      {
+        "title": "this is the title 4",
+        "content": "This will give you all of the info about a selected topic 4",
+        "user_id": 1,
+        "starting_date": "April 20, 2021 07:00:00",
+        "ending_date": "June 21, 2021 17:00:00"
+      }
+  ]
