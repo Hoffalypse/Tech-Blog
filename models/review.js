@@ -1,9 +1,13 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class USER extends Model { }
 
-USER.init(
+class Review extends Model { 
+
+
+
+}
+User.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,28 +15,24 @@ USER.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    dish_name: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    content: {
       type: DataTypes.TEXT,
-      allowNull: true,
-    },
-    guest_name: {
-      type: DataTypes.STRING,
       allowNull: false,
-    },
-    has_nuts: {
-      type: DataTypes.BOOLEAN,
     },
   },
   {
+ 
     sequelize,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: 'dish',
+    modelName: 'review',
   }
 );
 
-module.exports = USER;
+
+module.exports = Review;
