@@ -50,6 +50,14 @@ h2{
     transition-duration: 0.4s;
     
 }
+.color{
+    background-color: rgb(133, 118, 190);
+    font-size: 20px ;
+    padding: 5px;
+}
+.space{
+    padding: 20px;
+}
 .trans:hover:hover {
     color: #27CFFF;
     border-color:#27CFFF ;
