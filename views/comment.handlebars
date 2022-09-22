@@ -1,12 +1,27 @@
 
 <section class="space">
   <div class="box2">
-    <p class="color">  {{review.title}}<span class="end">created by {{review.user.user_name}} on {{format_time review.updatedAt}}</span></p>
+    <p class="color">  {{review.title}}<span class="end">created by {{review.user.username}} on {{format_time review.updatedAt}}</span></p>
     <p>{{review.content}}</p>
   </div>
 </section>
 <section>
-  {{#each comments as |comments|}}
-{{>section}}
+  {{#each review.comments as |review|}}
+{{>comment-section}}
 {{/each}}
 </section>
+<br>
+<section class="box2">
+   <div>
+      <p class="color">  Add Comment</p>
+  </div>
+  <form class="form login-form">
+      <div class="form-group center1">
+        
+        <textarea class="form-input" type="text" id="comment-input" /></textarea>
+         
+      </div>
+      <div class="form-group center1">
+        <button class="btn btn-primary" type="submit">post</button>
+</section>
+<script src="/js/addComment.js"></script>

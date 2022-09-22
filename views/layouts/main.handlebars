@@ -14,18 +14,17 @@
         <nav>
             <ul class="links container">
                 <li>
-                    <a href="/">Home</a></li>
+                    <a href="/" class="no">Home</a></li>
                 <li>
-                    <a href="/dashboard">Dashboard</a></li>
+                    <a href="/dashboard" class="no">Dashboard</a></li>
                 <li>
                     {{#if loggedIn}}
-                    
+                    <a id="logout"class="no">Logout</a>
                     {{else}}
-                    <a href="/login">Login </a></li>
+                    <a href="/login"class="no">Login</a>
                     {{/if}}
                     
-                <li>
-                    <a href="">Logout</a></li>           
+                
             </ul>
             <h1>The Tech Blog</h1>
         </nav>
@@ -34,5 +33,8 @@
     
     {{{body}}}
     </main>
+      {{#if loggedIn}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
 </body>
 </html>

@@ -1,24 +1,24 @@
 [
     {
-      "title": "How to paint a house",
-      "content": "You need a big roller, like really big! From there you just wipe it all over the place",
-      "user_id": 2
+      "comment_text": "What a great post WOW!",
+      "review_id": 1,
+      "user_id":4
       
     },
     {
-        "title": "Startup vs Big Tech",
-        "content": "Well it really comes down to one major decision. Do you like stability or do you like to gamble?",
-        "user_id": 1
-        
-    },
-    {
-        "title": "How to find Dogs favorite toy",
-        "content": "I usually just throw a bunch out there and see which one the little bugger brings back to me",
+        "comment_text": "Amazing Post, the best!!",
+        "review_id": 2,
         "user_id": 3
       },
       {
-        "title": "Front vs Back end",
-        "content": "Well if you were ever in a band do you want to be the bass player or the lead guitarist? If you're a bass player I'd go with the back end",
+        "comment_text": "This is the smartest thing that has ever been written",
+        "review_id": 3,
+        "user_id": 2
+      },
+      {
+        "comment_text": "You sir are a gentleman and a scholar",
+        "review_id": 4,
         "user_id": 1
+        
       }
   ]

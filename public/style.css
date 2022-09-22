@@ -6,6 +6,7 @@ header {
     padding: 1px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin-bottom:  20px;
+    
 }
 .bkg{
     background-color: lightgrey;
@@ -16,10 +17,17 @@ header {
     margin: auto;
 }
 .box2 {
+    
     border:5px solid rgb(133, 118, 190);
     width: 80%;
     margin: auto;
     
+}
+.comment-box{
+    border:5px solid rgb(133, 118, 190);
+    width: 80%;
+    margin: auto;
+    padding-top: 20px;
 }
 .container{
     display:flex;
@@ -30,7 +38,7 @@ header {
     padding:20px;
 }
 a:link, a:visited {
-    color:white;
+    color:white !important;
 }
 h1{
     text-align: center;
@@ -51,12 +59,16 @@ h2{
     
 }
 .color{
+    display: flex;
     background-color: rgb(133, 118, 190);
     font-size: 20px ;
     padding: 5px;
+    justify-content: space-between;
+    text-decoration: none;
 }
 .space{
-    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 .trans:hover:hover {
     color: #27CFFF;
@@ -67,4 +79,16 @@ h2{
 .end{
    text-align: end;
     color: white;
+}
+.center{
+    margin-left: 46%;
+}
+.center1{
+    margin-left: 20%;
+}
+#logout{
+    cursor: pointer;
+}
+.no{
+    text-decoration: none;
 }
