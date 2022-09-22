@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { User, Review, Comment } = require('../models');
-const { findAll } = require('../models/User');
+
 
 
 router.get('/', async (req, res) => {
@@ -70,34 +70,49 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
-router.get('/dashboard', async (req, res) => {
-  if (!req.session.loggedIn) {
-    res.redirect('/login');
-    return;
-}
-try{
-const userReview = await Review.findAll({
-  where: { 
-    user_id : req.session.user_id
-  }
-})
-const renderReview = dbReviewData.map((one) =>
-      one.get({ plain: true }))
-  res.render('dashboard',userReview)
+router.get('/dashboard', (req, res) => {
+  Review.findAll({
+          where: {
+              user_id: req.session.user_id
+          },
+          attributes: [
+              'id',
+              'title',
+              'content',
+              'created_at'
+          ],
+          include: [{
+             model: Comment,
+            attributes: ['id', 'comment_text', 'review_id', 'user_id', 'created_at'],
+            include: {
+                     model: User,
+                      attributes: ['username']
+                  }
+              },
+              {
+                  model: User,
+                  attributes: ['username']
+              }
+          ]
+      })
+      .then(reviewData => {
+          const reviews = reviewData.map(post => post.get({ plain: true }));
+          res.render('dashboard', { reviews, loggedIn: true });
+      })
+      .catch(err => {
+          console.log(err);
+          res.status(500).json(err);
+      });
+});
 
-} catch (err){
-
-  res.status(500).json(err);
-}
-}),
-//logout... ends the session
+// Logout
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
     });
   } else {
-    res.status(424).end();
+    res.status(404).end();
   }
 });
 module.exports = router;

@@ -1,19 +1,13 @@
-<form class="box">
-  <h2>Create Post</h2>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Title</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text"></div>
+{{#if reviews}}
+<section>
+  <div>
+    {{#each reviews as |review|}}
+    <button class="btn btn-primary" type="button">{{title}}</button>
+    {{/each}}
   </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Content</label>
-    <textarea class="form-control" aria-label="With textarea"></textarea>
-  </div>
-  
-  <div class="d-grid gap-2">
-    <button class="btn btn-primary" type="button">Create</button>
-    
-  </div>
-</form>
+</section>
+{{/if}}
+
 <br><br>
-<button type="button" class="trans btn btn-primary btn-lg">+ New Post</button>
+<a class="link" href="/new-review"> Add New Post</a>
+<script src="js/addComment.js"></script>

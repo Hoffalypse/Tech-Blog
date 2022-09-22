@@ -2,7 +2,17 @@ const router = require('express').Router();
 const { User, Review, Comment } = require('../../models');
 
 // ---------------------at api/users----------------------------
-
+//basic get route
+router.get('/', (req, res) => {
+  User.findAll({
+          include: {model: Review}
+      })
+      .then(dbUserData => res.json(dbUserData))
+      .catch(err => {
+          
+          res.status(500).json(err);
+      });
+});
 //signup new account 
 router.post('/signup', async (req, res) => {
 
