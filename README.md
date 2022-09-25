@@ -12,6 +12,7 @@ This app is a blog site that allows users to make an account, post to the blog a
 
 ## Installation
 This app is intalled in the Heroku cloud. Try it out at the following link  
+https://stormy-mesa-72944.herokuapp.com/
 
 ## Usage 
 Upon readching the site you will see the homepage with the most recent blog posts posted to the page. Shown below:

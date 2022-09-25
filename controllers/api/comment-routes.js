@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Review, Comment } = require('../../models');
+const { Review, Comment } = require('../../models');
 
 
 //at api/comments
