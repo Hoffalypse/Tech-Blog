@@ -20,6 +20,20 @@ Upon readching the site you will see the homepage with the most recent blog post
 <img src = "./public/images/home.jpg" alt = "homepage">
 </p>
 
+From there user must log in for create a new account. Once on the login page user has the option to log in or click the 'Signup for new Account' button to create a new user. Once logged in access will be given to the rest of the app. From the homepage user can click on any of the shown posts in order to comment on an individual post. The comment page is shown below:
+
+<p align ="center">
+<img src = "./public/images/comment.jpg" alt = "comment-page">
+</p>
+
+User may also choose the 'dashboard' icon at the top of the page if they would like to create their own post. Once clicking the dashboard user will see all of their posts along with a button to create additional posts. This page is shown below. 
+
+<p align ="center">
+<img src = "./public/images/dashboard.jpg" alt = "dashboard-page">
+</p>
+
+User can click on any of their previous posts to either update or to delete them. 
+
 ## Contributing 
 Here are the steps in order to contribute to this project.
 1. **Fork** the repo on GitHub
