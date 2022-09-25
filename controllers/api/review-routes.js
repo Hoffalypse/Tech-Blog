@@ -38,5 +38,23 @@ router.get('/', (req, res) => {
       })
       .catch((err) => res.json(err));
   });
+
+  router.put('/:id', (req, res) => {
+    Review.update (
+      {
+        content: req.body.content
+      },
+      {
+        where: {
+          id: req.params.id
+        },
+      }
+    )
+      .then((updatedRev) => {
+      
+        res.json(updatedRev);
+      })
+      .catch((err) => res.json(err));
+  });
 module.exports = router;
 

@@ -1,21 +1,21 @@
 
-const deleteReview = async () => {
+const updateReview = async () => {
     const id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1]
     const response = await fetch(`/api/reviews/${id}`, {
-      method: 'DELETE',
-      
+      method: 'PUT',
+      body: JSON.stringify({ content }),
       headers: { 'Content-Type': 'application/json' },
     });
 
     if (response.ok) {
        
-      document.location.replace('/dashboard');
+      document.location.reload();
     } else {
-      alert('Failed to delete.');
+      alert('Failed to update.');
     }
   };
   
   document
   .querySelector('.delReview')
-  .addEventListener('click', deleteReview);
+  .addEventListener('click', updateReview);
