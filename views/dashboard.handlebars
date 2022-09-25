@@ -1,13 +1,13 @@
 {{#if reviews}}
 <section>
-  <div>
+  <div >
     {{#each reviews as |review|}}
-    <button class="btn btn-primary" type="button"><a class="link" href="/selected-review/{{id}}">{{title}}</a></button>
-      {{!-- <a class="link" href="/login">{{title}}</a> --}}
+    <button class="btn btn-primary links2" type="button"><a href="/selected-review/{{id}}">{{title}}</a></button>
+      <br>
     {{/each}}
   </div>
 </section>
 {{/if}}
 
 <br><br>
-<a class="link" href="/new-review"> Add New Post</a>
+<a class="center2" href="/new-review"> Add New Post</a>

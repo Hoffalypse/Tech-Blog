@@ -2,7 +2,7 @@
   <div class="box2">
     <p class="color">  {{review.title}}<span class="end">created by {{review.user.username}} on {{format_time review.updatedAt}}</span></p>
     <p>{{review.content}}</p>
-      <button class="btn btn-primary delReview" type="button">Delete Entry</button>
+      <button class="btn btn-primary delReview center" type="button">Delete Entry</button>
   </div>
 
 </section>
@@ -13,16 +13,21 @@
       <p class="color">  Update Review</p>
   </div>
   <form class="form login-form">
-      <div class="form-group center1">
-        
-        <textarea class="form-input" type="text" id="comment-input" /></textarea>
-         
+      <div class="form-group">
+        <div class="center3">
+            <label for="exampleInputPassword1" class="form-label">Change Title</label>
+            <input class="form-input" type="text" id="title-input" ></input>
+        </div>
+        <div class="center4">
+            <label for="exampleInputPassword1" class="form-label">Change Content</label>
+            <textarea class="form-input" type="text" id="update-input" ></textarea>
+         </div>
       </div>
-      <div class="form-group center1">
-        <button class="btn btn-primary" type="submit">Update</button>
+      <div class="form-group center">
+        <button class="btn btn-primary updateReview " type="submit">Update</button>
         
         </div>
     </form>
 </section>
 
-<script src="/js/delete.js"></script>
+<script src="/js/updateRev.js"></script>

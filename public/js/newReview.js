@@ -12,7 +12,7 @@ const newReviewHandler = async (event) => {
         body: JSON.stringify({ title, content }),
         headers: {'Content-Type': 'application/json'},
       });
-      console.log(content);
+     
       if (response.ok) {
         console.log("here")
         document.location.replace('/dashboard');

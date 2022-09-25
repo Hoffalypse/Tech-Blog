@@ -125,6 +125,10 @@ router.get('/signup', (req, res) => {
  
   res.render('signup');
 });
+router.get('/new-review', (req, res) => {
+ 
+  res.render('new-review', {loggedIn: true});
+});
 
 router.get('/dashboard', (req, res) => {
   if (!req.session.loggedIn) {

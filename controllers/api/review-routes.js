@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
             res.status(500).json(err);
         });
   });
-  router.post('/',  withAuth, async (req, res) => {
+  router.post('/',  async (req, res) => {
     try {
    
       const newReview = await Review.create({
@@ -40,8 +40,10 @@ router.get('/', (req, res) => {
   });
 
   router.put('/:id', (req, res) => {
+    console.log(req.body.content);
     Review.update (
       {
+        title: req.body.title,
         content: req.body.content
       },
       {
