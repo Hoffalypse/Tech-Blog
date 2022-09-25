@@ -1,16 +1,18 @@
-<form class="box">
+
+<form class="box new-review-form">
   <h2>Create Post</h2>
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Title</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text"></div>
+    <label class="form-label">Title</label>
+    <input type="input" class="form-control" id="title-input" aria-describedby="emailHelp">
+    <div class="form-text"></div>
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Content</label>
-    <textarea class="form-control" aria-label="With textarea"></textarea>
+    <textarea class="form-control" aria-label="With textarea" id="content-input"></textarea>
   </div> 
  
-    <button class="btn btn-primary" type="button">Create</button> 
+    <button class="btn btn-primary" type="submit">Create</button> 
     
   </div>
 </form>
+<script src="/js/newReview.js"></script>

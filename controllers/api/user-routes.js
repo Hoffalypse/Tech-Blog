@@ -5,7 +5,7 @@ const { User, Review, Comment } = require('../../models');
 //basic get route
 router.get('/', (req, res) => {
   User.findAll({
-          include: {model: Review}
+          include: {model:Review}
       })
       .then(dbUserData => res.json(dbUserData))
       .catch(err => {
@@ -87,5 +87,6 @@ User.destroy({
   })
   .catch((err) => res.json(err));
 });
+
 
   module.exports = router;

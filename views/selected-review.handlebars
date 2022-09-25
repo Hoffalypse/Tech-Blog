@@ -1,0 +1,26 @@
+<section class="space">
+  <div class="box2">
+    <p class="color">  {{review.title}}<span class="end">created by {{review.user.username}} on {{format_time review.updatedAt}}</span></p>
+    <p>{{review.content}}</p>
+    <button class="btn btn-primary delreview" type="button">Delete Entry</button>
+  </div>
+</section>
+
+<br>
+<section class="box2">
+   <div>
+      <p class="color">  Update Review</p>
+  </div>
+  <form class="form login-form">
+      <div class="form-group center1">
+        
+        <textarea class="form-input" type="text" id="comment-input" /></textarea>
+         
+      </div>
+      <div class="form-group center1">
+        <button class="btn btn-primary" type="submit">Update</button>
+        </div>
+    </form>
+</section>
+
+<script src="/js/delete.js"></script>

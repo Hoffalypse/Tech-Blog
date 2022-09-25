@@ -2,7 +2,8 @@
 <section>
   <div>
     {{#each reviews as |review|}}
-    <button class="btn btn-primary" type="button">{{title}}</button>
+    <button class="btn btn-primary" type="button"><a class="link" href="/selected-review/{{id}}">{{title}}</a></button>
+      {{!-- <a class="link" href="/login">{{title}}</a> --}}
     {{/each}}
   </div>
 </section>
@@ -10,4 +11,3 @@
 
 <br><br>
 <a class="link" href="/new-review"> Add New Post</a>
-<script src="js/addComment.js"></script>

@@ -51,7 +51,7 @@ router.get('/comment/:id', async (req, res) => {
     });
     const review = addComment.get({ plain: true });
    
-    res.render('comment', {review});
+    res.render('comment', {review, loggedIn: true});
     }
      catch (err) {
         res.status(500).json("comment screen error");
@@ -64,13 +64,74 @@ router.get('/login', (req, res) => {
   
   res.render('login');
 });
+router.get('/', async (req, res) => {
+  try {
+   
+    const dbReviewData = await Review.findAll({
+    
+      include: [
+        {
+          model: User,
+          attributes: ['username'], 
+        },
+      ],
+  });
+    const renderReview = dbReviewData.map((one) =>
+      one.get({ plain: true })
+    );
+    res.render('all',{renderReview, loggedIn: req.session.loggedIn});
+    }
+     catch (err) {
+        res.status(500).json("show this");
 
+      }
+    }
+);
+
+//screen to add new review
+router.get('/selected-review/:id', async (req, res) => {
+  try {
+    
+    const editReview = await Review.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['username'], 
+        },
+        {
+          model: Comment,
+            include: [{model: User, attributes: ['username']}]
+        },
+      ],
+    });
+    const review = editReview.get({ plain: true });
+   
+    res.render('selected-review', {review, loggedIn: true});
+    }
+     catch (err) {
+        res.status(500).json("review update screen error");
+      }
+    }
+);
+
+
+//screen to edit and delete reviews
+router.get('/selected-review/:id', (req, res) => {
+  
+  res.render('selected-review', {loggedIn: true});
+});
+// signup screen
 router.get('/signup', (req, res) => {
  
   res.render('signup');
 });
 
 router.get('/dashboard', (req, res) => {
+  if (!req.session.loggedIn) {
+    
+    res.redirect('/login');
+    return;
+}
   Review.findAll({
           where: {
               user_id: req.session.user_id
@@ -96,6 +157,7 @@ router.get('/dashboard', (req, res) => {
           ]
       })
       .then(reviewData => {
+        
           const reviews = reviewData.map(post => post.get({ plain: true }));
           res.render('dashboard', { reviews, loggedIn: true });
       })

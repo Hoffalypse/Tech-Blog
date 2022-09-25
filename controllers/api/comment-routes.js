@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
     }
   });
   router.post('/', async (req, res) => {
-    console.log(req.session.user_id)
+   
     try{ 
       
     const comment = await Comment.create({ 
@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
 
       const renderReview = comment.get({ plain: true });
       const dude = JSON.stringify(renderReview)
-      console.log("heeeeeeeeeeeeeeeeeeeeeeey" + dude);
+      
         res.status(200).json(comment);
       
       }catch(err)  {
@@ -37,7 +37,6 @@ router.get('/', async (req, res) => {
     })
 
     router.delete('/:id', (req, res) => {
-      // Looks for the Category based on id given in the request parameters and deletes the instance from the database
     Comment.destroy({
       where: {
         id: req.params.id,
