@@ -1,9 +1,10 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { User, Review, Comment } = require('../models');
+const withAuth = require("../utils/auth");
 
 
-
+//render main page with posts shown 
 router.get('/', async (req, res) => {
   try {
    
@@ -29,12 +30,9 @@ router.get('/', async (req, res) => {
 );
 
 //get one post for comment page 
-router.get('/comment/:id', async (req, res) => {
+router.get('/comment/:id', withAuth, async (req, res) => {
   
-  if (!req.session.loggedIn) {
-      res.redirect('/login');
-      return;
-    }
+
   try {
     
     const addComment = await Review.findByPk(req.params.id, {
@@ -59,7 +57,7 @@ router.get('/comment/:id', async (req, res) => {
     }
 );
 
-//main page link
+//login page link
 router.get('/login', (req, res) => {
   
   res.render('login');
@@ -89,7 +87,7 @@ router.get('/', async (req, res) => {
 );
 
 //screen to add new review
-router.get('/selected-review/:id', async (req, res) => {
+router.get('/selected-review/:id', withAuth, async (req, res) => {
   try {
     
     const editReview = await Review.findByPk(req.params.id, {

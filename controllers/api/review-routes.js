@@ -3,7 +3,7 @@ const { User, Review } = require('../../models');
 const withAuth = require("../../utils/auth");
 
 //-----------------/api/reviews---------------------------
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
     Review.findAll({
             include: {model: User}
         })
@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
             res.status(500).json(err);
         });
   });
-  router.post('/',  async (req, res) => {
+  router.post('/',  withAuth, async (req, res) => {
     try {
    
       const newReview = await Review.create({
@@ -38,7 +38,7 @@ router.get('/', (req, res) => {
       })
       .catch((err) => res.json(err));
   });
-
+//update review route
   router.put('/:id', (req, res) => {
     console.log(req.body.content);
     Review.update (

@@ -2,7 +2,8 @@ const router = require('express').Router();
 const { Review, Comment } = require('../../models');
 
 
-//at api/comments
+
+//----------------at api/comments
 router.get('/', async (req, res) => {
     
     try {
