@@ -17,7 +17,7 @@ This app is intalled in the Heroku cloud. Try it out at the following link
 Upon readching the site you will see the homepage with the most recent blog posts posted to the page. Shown below:
 
 <p align ="center">
-<img src = "./images/home.jpg" alt = "homepage">
+<img src = "./public/images/home.jpg" alt = "homepage">
 </p>
 
 ## Contributing 
