@@ -1,6 +1,6 @@
-const User = require('./User');
-const Review = require('./Review');
-const Comment = require('./Comment');
+const User = require('./');
+const Review = require('./');
+const Comment = require('./');
 
 
 // Review belongs to User
