@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
     const renderReview = dbReviewData.map((one) =>
       one.get({ plain: true })
     );
-    res.render('all',renderReview);
+    res.render('all',{renderReview, loggedIn: true});
     }
      catch (err) {
         res.status(500).json("show this");
