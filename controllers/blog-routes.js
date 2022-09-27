@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
     const renderReview = dbReviewData.map((one) =>
       one.get({ plain: true })
     );
-    res.render('all',{renderReview, loggedIn: true});
+    res.render('all',{renderReview, loggedIn:req.session.loggedIn});
     }
      catch (err) {
         res.status(500).json("show this");
@@ -30,7 +30,7 @@ router.get('/', async (req, res) => {
 );
 
 //get one post for comment page 
-router.get('/comment/:id', withAuth, async (req, res) => {
+router.get('/comment/:id',  withAuth, async (req, res) => {
   
 
   try {

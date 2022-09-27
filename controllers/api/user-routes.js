@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Review, Comment } = require('../../models');
+const { User, Review } = require('../../models');
 
 // ---------------------at api/users----------------------------
 //basic get route
@@ -76,8 +76,8 @@ router.post('/login', async (req, res) => {
   }
 });
 router.delete('/:id', (req, res) => {
-  // Looks for the Category based on id given in the request parameters and deletes the instance from the database
-User.destroy({
+
+  User.destroy({
   where: {
     id: req.params.id,
   },
