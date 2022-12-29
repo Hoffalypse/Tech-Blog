@@ -3,7 +3,7 @@ const newReviewHandler = async (event) => {
   
     const title = document.querySelector('#title-input').value.trim();
     const content = document.querySelector('#content-input').value.trim();
-    console.log(title + " " + content);
+    
   
     if (title && content) {
       console.log(content);
@@ -14,7 +14,7 @@ const newReviewHandler = async (event) => {
       });
      
       if (response.ok) {
-        console.log("here")
+        
         document.location.replace('/dashboard');
       } else {
         alert('screw this I quit');

@@ -40,8 +40,7 @@ Comment.init(
     freezeTableName:true,
     underscored: true,
     modelName: 'comment'
-  },
-  
+  }, 
 );
 
 module.exports = Comment;
