@@ -1,3 +1,4 @@
+//will seed the DB with some basic data 
 const sequelize = require('../config/connection');
 const { User } = require('../models');
 const { Review } = require('../models');

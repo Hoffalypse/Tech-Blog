@@ -1,3 +1,4 @@
+//Handles all newly created reviews. 
 const newReviewHandler = async (event) => {
     event.preventDefault();
   
