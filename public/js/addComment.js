@@ -1,3 +1,4 @@
+//add comment to current post
 const commentHandler = async (event) => {
     event.preventDefault();
   

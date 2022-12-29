@@ -4,7 +4,7 @@ const { User, Review, Comment } = require('../models');
 const withAuth = require("../utils/auth");
 
 
-//render main page with posts shown 
+//render main page with posts shown updated from db
 router.get('/', async (req, res) => {
   try {
    
